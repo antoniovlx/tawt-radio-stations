@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "discoveryRadio",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

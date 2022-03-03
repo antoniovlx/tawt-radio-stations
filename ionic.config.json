@@ -1,0 +1,7 @@
+{
+  "name": "discoveryRadio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
