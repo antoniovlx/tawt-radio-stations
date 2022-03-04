@@ -9,7 +9,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let station of stations">
       <ion-item>
-        <ion-label>{{station.name}}</ion-label>
+        <ion-label>{{station.name}} {{station.geo_lat}} {{station.geo_long}}</ion-label>
         <ion-button slot="start" (click)="play(station.url)">
           <ion-icon name="play"></ion-icon>
         </ion-button>

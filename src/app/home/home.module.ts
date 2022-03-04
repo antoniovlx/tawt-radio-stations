@@ -9,6 +9,7 @@ import { SwiperModule } from 'swiper/angular';
 import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 
 import { HomePage } from './home.page';
+import { SharedModule } from '../shared/shared.module';
 
 SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom]);
 
@@ -18,7 +19,8 @@ SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom]);
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SwiperModule
+    SwiperModule,
+    SharedModule
   ],
   declarations: [HomePage]
 })

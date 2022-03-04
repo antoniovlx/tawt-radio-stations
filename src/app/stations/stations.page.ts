@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RadioBrowserApi, Station } from 'radio-browser-api'
-
-const api = new RadioBrowserApi('My Radio App');
+import { Station } from 'radio-browser-api';
+import { StationsService } from '../services/stations.service';
 
 @Component({
   selector: 'app-stations',
@@ -12,24 +11,14 @@ export class StationsPage implements OnInit {
   stations: Station[] = [];
   audio: HTMLAudioElement;
 
-  constructor() { }
+  constructor(private stationsService: StationsService) { }
 
   ngOnInit(): void {
-    this.getStations();
     this.audio = new Audio();
-  }
 
-  async getStations() {
-    const api = new RadioBrowserApi('My Radio App');
-
-    // query stations by country code and limit to first 100 stations
-    this.stations = await api.searchStations({
-      countryCode: 'US',
-      limit: 100,
-      offset: 0 // this is the default - can be omited
+    this.stationsService.getStations().then(stations =>{
+      this.stations = stations;
     })
-
-    console.log(this.stations)
   }
 
   play(url: string){
