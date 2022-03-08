@@ -27,7 +27,7 @@ ng-template {
   }
 
   p {
-    padding: 0 40px;
+    padding: 0 0px;
     font-size: 14px;
     line-height: 1.5;
     color: var(--ion-color-step-600, #60646b);
@@ -41,4 +41,9 @@ ng-template {
 .map {
    height: 100vh;
    padding: 0;
+}
+
+.lorem {
+  font-style: italic;
+  color: #AAA;
 }

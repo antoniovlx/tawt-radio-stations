@@ -5,11 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <!-- List of Sliding Items -->
+  <ion-item>
+    <ion-label>Countries</ion-label>
+    <ion-select multiple="true" cancelText="Cancel" okText="Filter" (ionChange)="selectCountry($event)">
+      <ion-select-option [value]="country.alpha2" *ngFor="let country of countries">{{country.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  {{this.selectedCountry }}
+  <ion-text>
+    {{stations.length}}
+  </ion-text>
   <ion-list>
     <ion-item-sliding *ngFor="let station of stations">
       <ion-item>
-        <ion-label>{{station.name}} {{station.geo_lat}} {{station.geo_long}}</ion-label>
+        <ion-label>{{station.name}} {{station.geoLat}} {{station.geoLong}}</ion-label>
         <ion-button slot="start" (click)="play(station.url)">
           <ion-icon name="play"></ion-icon>
         </ion-button>
@@ -22,5 +31,5 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-  
+
 </ion-content>
